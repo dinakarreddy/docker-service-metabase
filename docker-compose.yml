@@ -10,8 +10,10 @@ services:
       MB_DB_USER: user1
       MB_DB_PASS: pass1
       MB_DB_HOST: docker.for.mac.localhost
-      JAVA_TIMEZONE: Asia/Mumbai
+      JAVA_TIMEZONE: Asia/Kolkata
       JAVA_TOOL_OPTIONS: -Xmx512m
+      MB_ENCRYPTION_SECRET_KEY: abcdefghijklmnopqrstuvwxyz
+      # https://www.metabase.com/docs/v0.23.0/operations-guide/start.html#using-https-with-metabase
     logging:
       driver: json-file
       options:
@@ -33,3 +35,4 @@ services:
         max-size: "10m"
         max-file: "1"
         labels: "nginx"
+    restart: always
